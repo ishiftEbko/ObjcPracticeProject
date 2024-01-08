@@ -1,0 +1,50 @@
+//
+//  PrefixHeader.pch
+//  ObjcPracticeProject
+//
+//  Created by ishiftEbko on 1/8/24.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+/**
+ 공통으로 사용하는 파일 import
+ */
+
+
+/**
+ NSLog (only in Debug)
+ */
+#ifdef DEBUG
+//#define NSLog( s, ... ) NSLog( @"[%@ %s(%d)] %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define NSLog(fmt, ...) NSLog(@"%s[%d] %@",__FUNCTION__, __LINE__, [NSString stringWithFormat:(fmt), ##__VA_ARGS__])
+#else
+#define NSLog( s, ... )
+#endif
+
+/**
+ Custom Define
+ */
+#define WEAKSELF __weak typeof(self) weakSelf = self
+
+/**
+ Web and Image Host URL
+ */
+
+/**
+ Color
+ */
+
+/**
+ Value Define
+ */
+// Notification Define
+
+
+/**
+ Common Text Define (for Localize)
+ */
+
+
+#endif
