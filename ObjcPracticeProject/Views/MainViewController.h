@@ -7,9 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
+//MARK: collectionView Cell
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<UINavigationBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @end
 

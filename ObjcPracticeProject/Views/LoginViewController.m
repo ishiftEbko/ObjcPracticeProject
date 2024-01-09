@@ -18,6 +18,9 @@
     [super viewDidLoad];
     self.loginLabel.text = @"loginViewController";
     NSLog(@"LoginViewController ViewDidLoad");
+    
+//    NSString *userDefaultTest = [[NSUserDefaults standardUserDefaults] objectForKey:@"testKey"];
+//    NSLog(@"userDefaultTest >>> %@", userDefaultTest);
 }
 
 
