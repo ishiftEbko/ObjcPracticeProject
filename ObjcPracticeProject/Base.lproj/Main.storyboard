@@ -133,6 +133,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="AE7-P3-SJC" id="kPC-en-ZYK"/>
+                        <outlet property="moveBtn" destination="c8h-Th-1EW" id="EYw-xy-NAI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,9 +225,96 @@
                     <view key="view" contentMode="scaleToFill" id="hIe-bp-vBL">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7m-NY-8Lf">
+                                <rect key="frame" x="0.0" y="59" width="430" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBz-pK-WKK">
+                                        <rect key="frame" x="10" y="0.0" width="410" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eBz-pK-WKK" secondAttribute="trailing" constant="10" id="NKC-95-z2k"/>
+                                    <constraint firstAttribute="height" constant="46" id="QHL-gJ-4Pu"/>
+                                    <constraint firstAttribute="bottom" secondItem="eBz-pK-WKK" secondAttribute="bottom" id="hF2-z4-UsI"/>
+                                    <constraint firstItem="eBz-pK-WKK" firstAttribute="leading" secondItem="W7m-NY-8Lf" secondAttribute="leading" constant="10" id="v5l-3s-fwc"/>
+                                    <constraint firstItem="eBz-pK-WKK" firstAttribute="top" secondItem="W7m-NY-8Lf" secondAttribute="top" id="xbF-sb-dHM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9V-2z-Km6">
+                                <rect key="frame" x="0.0" y="105" width="430" height="747"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-KI-jFS">
+                                <rect key="frame" x="0.0" y="852" width="430" height="46"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="li5-QQ-npO">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="46"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuS-Qc-IcC">
+                                                <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="46"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="🔙"/>
+                                                <connections>
+                                                    <action selector="backBtnTouched:" destination="9my-l8-cCH" eventType="touchUpInside" id="TQt-WK-wPE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N61-iP-0iI">
+                                                <rect key="frame" x="107.66666666666669" y="0.0" width="107.33333333333331" height="46"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="🏠"/>
+                                                <connections>
+                                                    <action selector="homeBtnTouched:" destination="9my-l8-cCH" eventType="touchUpInside" id="uoH-MY-x6E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CX-wt-O61">
+                                                <rect key="frame" x="214.99999999999997" y="0.0" width="107.66666666666666" height="46"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="♟️"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD1-QA-hEv">
+                                                <rect key="frame" x="322.66666666666669" y="0.0" width="107.33333333333331" height="46"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="♟️"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="li5-QQ-npO" secondAttribute="trailing" id="7Kp-kD-aWu"/>
+                                    <constraint firstItem="li5-QQ-npO" firstAttribute="leading" secondItem="U8a-KI-jFS" secondAttribute="leading" id="KVG-K5-JjI"/>
+                                    <constraint firstAttribute="height" constant="46" id="P2n-nJ-CJF"/>
+                                    <constraint firstItem="li5-QQ-npO" firstAttribute="top" secondItem="U8a-KI-jFS" secondAttribute="top" id="UFG-QU-UD1"/>
+                                    <constraint firstAttribute="bottom" secondItem="li5-QQ-npO" secondAttribute="bottom" id="cvR-o9-dpc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YBP-il-WPO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U8a-KI-jFS" firstAttribute="leading" secondItem="YBP-il-WPO" secondAttribute="leading" id="6uJ-VV-8Zf"/>
+                            <constraint firstItem="U8a-KI-jFS" firstAttribute="top" secondItem="r9V-2z-Km6" secondAttribute="bottom" id="72d-z1-lnv"/>
+                            <constraint firstItem="YBP-il-WPO" firstAttribute="bottom" secondItem="U8a-KI-jFS" secondAttribute="bottom" id="E88-lx-0r9"/>
+                            <constraint firstItem="YBP-il-WPO" firstAttribute="trailing" secondItem="W7m-NY-8Lf" secondAttribute="trailing" id="VBX-cj-sGL"/>
+                            <constraint firstItem="YBP-il-WPO" firstAttribute="trailing" secondItem="r9V-2z-Km6" secondAttribute="trailing" id="Vjl-ei-RJu"/>
+                            <constraint firstItem="W7m-NY-8Lf" firstAttribute="top" secondItem="YBP-il-WPO" secondAttribute="top" id="aqp-hg-kaU"/>
+                            <constraint firstItem="r9V-2z-Km6" firstAttribute="leading" secondItem="YBP-il-WPO" secondAttribute="leading" id="gop-3q-xaV"/>
+                            <constraint firstItem="r9V-2z-Km6" firstAttribute="top" secondItem="W7m-NY-8Lf" secondAttribute="bottom" id="mcD-KH-qOj"/>
+                            <constraint firstItem="W7m-NY-8Lf" firstAttribute="leading" secondItem="YBP-il-WPO" secondAttribute="leading" id="vpg-N7-7nE"/>
+                            <constraint firstItem="YBP-il-WPO" firstAttribute="trailing" secondItem="U8a-KI-jFS" secondAttribute="trailing" id="zIc-Z5-RVE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="MuS-Qc-IcC" id="shn-XX-INQ"/>
+                        <outlet property="headerTitleLabel" destination="eBz-pK-WKK" id="qSI-Z0-cDh"/>
+                        <outlet property="homeBtn" destination="N61-iP-0iI" id="g7w-qU-XNE"/>
+                        <outlet property="webViewBase" destination="r9V-2z-Km6" id="dWV-lx-Bwm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Z4-jb-ans" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

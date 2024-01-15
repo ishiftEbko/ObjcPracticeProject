@@ -36,7 +36,7 @@
 }
 
 - (void)goMain {
-    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:SB_MAIN bundle:nil];
     UINavigationController *mainNaviVC = [mainSB instantiateViewControllerWithIdentifier:@"MainNavigationVC"];
 
     NSArray<UIWindow *> *windows = [[UIApplication sharedApplication] windows];

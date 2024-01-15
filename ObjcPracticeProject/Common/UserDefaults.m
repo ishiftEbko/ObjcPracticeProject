@@ -8,6 +8,7 @@
 #import "UserDefaults.h"
 
 NSString *const UserDefaultsMemberYn = @"memberYn";
+NSString *const UserDefaultsAuthToken = @"authToken";
 
 @implementation UserDefaults
 + (instancetype _Nonnull)shared {
@@ -27,6 +28,25 @@ NSString *const UserDefaultsMemberYn = @"memberYn";
 + (void)setMemberYn:(NSString *)memberYn {
     [[NSUserDefaults standardUserDefaults] setObject:memberYn forKey:UserDefaultsMemberYn];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)isLogin {
+    // 로그인 시 얻어오는 DataModel의 유무로 login 여부 파악
+    return YES;
+}
+
++ (void)setAuthToken:(NSString *)token {
+    NSLog(@"setAuthToken >>> %@", token);
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:UserDefaultsAuthToken];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)getAuthToken {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:UserDefaultsAuthToken] != nil) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:UserDefaultsAuthToken];
+    } else {
+        return nil;
+    }
 }
 
 @end

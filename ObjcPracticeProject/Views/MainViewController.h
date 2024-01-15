@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebViewController.h"
 
 //MARK: collectionView Cell
 

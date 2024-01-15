@@ -6,28 +6,21 @@
 //
 
 #import "MainViewController.h"
-typedef enum {
-    main,
-    empty
-} Section;
 
 @interface MainViewController ()
 // MARK: UI
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIButton *moveBtn;
+
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
-@property(nonatomic, weak, nullable) id<UICollectionViewDataSource> dataSource;
 
 @end
 
 @implementation MainViewController
-// collectionView -> DiffableDataSource로 안 되나
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"MainViewController ViewDidLoad");
-//    
-//    [[NSUserDefaults standardUserDefaults] setObject:@"testValue" forKey:@"testKey"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
     
     // 다른 화면으로 이동하여 다른 화면에 머무르고 있을 경우 스와이프 제스쳐를 통해 이전 화면으로 돌아가는 동작 방지
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
@@ -35,6 +28,9 @@ typedef enum {
     }
     
     // 버튼 텍스트 세팅 및 제스쳐 추가
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(moveMyPage:)];
+    [self.moveBtn addGestureRecognizer:tap];
+    
     // Notification Center addObserver
     // refresh control 세팅
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -49,15 +45,20 @@ typedef enum {
     // 앱 최초 구동 시 튜토리얼 표시 (튜토리얼 닫힐 때 이미지 팝업 show -> TutorialVC 에서)
     //          -> 최초가 아닐 경우 : 이미지 팝업 show
     // 로그인 세팅
-    
-     
-    // diffable, snapshot 가능 여부 확인
-    self.dataSource = [[UICollectionViewDiffableDataSource alloc] initWithCollectionView:self.collectionView cellProvider:^UICollectionViewCell * _Nullable(UICollectionView * _Nonnull collectionView, NSIndexPath * _Nonnull indexPath, id  _Nonnull itemIdentifier) {
-        // configure and return cell
-        return [[UICollectionViewCell alloc] init];
-    }];
-    NSDiffableDataSourceSnapshot<NSNumber *, NSUUID *> *snapshot = [[NSDiffableDataSourceSnapshot alloc] init];
-//    [self.dataSource applySnapshot:snapshot animatingDifferences:true];
+}
+
+// MARK: Action
+-(void)moveMyPage:(UITapGestureRecognizer *)tapGestureRecognizer {
+    BOOL isLogin = [UserDefaults isLogin];
+    if(isLogin) {
+        // 로그인 O
+//        UIStoryboard *mainSB = [UIStoryboard storyboardWithName:SB_MAIN bundle:nil];
+//        WebViewController *webVC = (WebViewController *)[mainSB instantiateViewControllerWithIdentifier:NSStringFromClass([WebViewController class])];
+        WebViewController *webVC = [CommonUtils getWebView:testPage params:nil headerTitle:nil];
+        if (webVC != nil) {
+            [self.navigationController pushViewController:webVC animated:YES];            
+        }
+    }
 }
 
 // MARK: Request Data and Refresh Data

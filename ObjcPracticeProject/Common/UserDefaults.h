@@ -17,7 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: UserDefaults
 + (void)setMemberYn:(NSString *)memberYn;
 + (NSString *)getMemberYn;
-
++ (BOOL)isLogin;
++ (void)setAuthToken:(NSString *)token;
++ (NSString *)getAuthToken;
 
 @end
 
