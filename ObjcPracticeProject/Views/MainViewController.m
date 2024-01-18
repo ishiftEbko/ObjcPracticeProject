@@ -90,12 +90,14 @@
     UIImageView *imageView3 = [[UIImageView alloc] initWithImage:image3];
     UIImageView *imageView4 = [[UIImageView alloc] initWithImage:image4];
     UIImageView *imageView5 = [[UIImageView alloc] initWithImage:image5];
+    NoticeView *noticeView = [[NoticeView alloc] init];
         
-    self.tempImageViewArray = [NSMutableArray arrayWithObjects:imageView1, imageView2, imageView3, imageView4, imageView5, nil];
+    self.tempImageViewArray = [NSMutableArray arrayWithObjects:imageView1, imageView2, imageView3, imageView4, imageView5, noticeView, nil];
     for (UIImageView *imageView in self.tempImageViewArray) {
+        imageView.translatesAutoresizingMaskIntoConstraints = false;
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [imageView.widthAnchor constraintEqualToConstant:200].active = true;
-        [imageView.heightAnchor constraintEqualToConstant:200].active = true;
+        [imageView.widthAnchor constraintEqualToConstant:self.mainContentsView.frame.size.width].active = true;
+        [imageView.heightAnchor constraintEqualToConstant:500].active = true;
     }
 }
 

@@ -22,6 +22,11 @@
 		0B8A9D9A2B4BCB9E00F4E271 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A9D992B4BCB9E00F4E271 /* MainViewController.m */; };
 		0B8A9D9D2B4BCBC300F4E271 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A9D9C2B4BCBC300F4E271 /* LoginViewController.m */; };
 		0B8A9DA02B4BCBCC00F4E271 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A9D9F2B4BCBCC00F4E271 /* WebViewController.m */; };
+		0B9CDBDB2B57914700406B5D /* NoticeTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CDBD92B57914700406B5D /* NoticeTVCell.m */; };
+		0B9CDBDC2B57914700406B5D /* NoticeTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9CDBDA2B57914700406B5D /* NoticeTVCell.xib */; };
+		0B9CDBE02B57961500406B5D /* DMNoticeListResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CDBDF2B57961500406B5D /* DMNoticeListResult.m */; };
+		0BC92C782B575D550082AF56 /* SummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC92C772B575D550082AF56 /* SummaryView.m */; };
+		0BC92C7B2B57661F0082AF56 /* NoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC92C7A2B57661F0082AF56 /* NoticeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,16 @@
 		0B8A9D9C2B4BCBC300F4E271 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0B8A9D9E2B4BCBCC00F4E271 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		0B8A9D9F2B4BCBCC00F4E271 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		0B9CDBD82B57914700406B5D /* NoticeTVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeTVCell.h; sourceTree = "<group>"; };
+		0B9CDBD92B57914700406B5D /* NoticeTVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeTVCell.m; sourceTree = "<group>"; };
+		0B9CDBDA2B57914700406B5D /* NoticeTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTVCell.xib; sourceTree = "<group>"; };
+		0B9CDBDE2B57961500406B5D /* DMNoticeListResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMNoticeListResult.h; sourceTree = "<group>"; };
+		0B9CDBDF2B57961500406B5D /* DMNoticeListResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNoticeListResult.m; sourceTree = "<group>"; };
+		0B9CDBE12B57992400406B5D /* DataModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		0BC92C762B575D550082AF56 /* SummaryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryView.h; sourceTree = "<group>"; };
+		0BC92C772B575D550082AF56 /* SummaryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryView.m; sourceTree = "<group>"; };
+		0BC92C792B57661F0082AF56 /* NoticeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeView.h; sourceTree = "<group>"; };
+		0BC92C7A2B57661F0082AF56 /* NoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +182,8 @@
 		0B8A9D932B4B7EFA00F4E271 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0B9CDBDD2B57959600406B5D /* DataModels */,
+				0BC92C752B575C130082AF56 /* SubViews */,
 				0B8A9D942B4B7F5400F4E271 /* IntroViewController.h */,
 				0B8A9D952B4B7F5400F4E271 /* IntroViewController.m */,
 				0B8A9D982B4BCB9E00F4E271 /* MainViewController.h */,
@@ -177,6 +194,30 @@
 				0B8A9D9F2B4BCBCC00F4E271 /* WebViewController.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0B9CDBDD2B57959600406B5D /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				0B9CDBDE2B57961500406B5D /* DMNoticeListResult.h */,
+				0B9CDBDF2B57961500406B5D /* DMNoticeListResult.m */,
+				0B9CDBE12B57992400406B5D /* DataModels.h */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		0BC92C752B575C130082AF56 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				0BC92C762B575D550082AF56 /* SummaryView.h */,
+				0BC92C772B575D550082AF56 /* SummaryView.m */,
+				0BC92C792B57661F0082AF56 /* NoticeView.h */,
+				0BC92C7A2B57661F0082AF56 /* NoticeView.m */,
+				0B9CDBD82B57914700406B5D /* NoticeTVCell.h */,
+				0B9CDBD92B57914700406B5D /* NoticeTVCell.m */,
+				0B9CDBDA2B57914700406B5D /* NoticeTVCell.xib */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +325,7 @@
 			files = (
 				0B8A9D6E2B4B797100F4E271 /* LaunchScreen.storyboard in Resources */,
 				0B8A9D6B2B4B797100F4E271 /* Assets.xcassets in Resources */,
+				0B9CDBDC2B57914700406B5D /* NoticeTVCell.xib in Resources */,
 				0B8A9D692B4B796F00F4E271 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,14 +352,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B8A9D9A2B4BCB9E00F4E271 /* MainViewController.m in Sources */,
+				0B9CDBDB2B57914700406B5D /* NoticeTVCell.m in Sources */,
 				0B0CDE2C2B4D021700C44A9D /* UserDefaults.m in Sources */,
 				0B8A9D602B4B796F00F4E271 /* AppDelegate.m in Sources */,
 				0B0CDE282B4CE52C00C44A9D /* CommonUtils.m in Sources */,
 				0B8A9DA02B4BCBCC00F4E271 /* WebViewController.m in Sources */,
+				0BC92C782B575D550082AF56 /* SummaryView.m in Sources */,
 				0B8A9D712B4B797100F4E271 /* main.m in Sources */,
 				0B8A9D9D2B4BCBC300F4E271 /* LoginViewController.m in Sources */,
 				0B8A9D632B4B796F00F4E271 /* SceneDelegate.m in Sources */,
 				0B8A9D962B4B7F5400F4E271 /* IntroViewController.m in Sources */,
+				0BC92C7B2B57661F0082AF56 /* NoticeView.m in Sources */,
+				0B9CDBE02B57961500406B5D /* DMNoticeListResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

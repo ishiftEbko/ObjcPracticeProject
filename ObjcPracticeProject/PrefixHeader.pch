@@ -14,6 +14,7 @@
 #import "UserDefaults.h"
 #import "CommonUtils.h"
 #import "WebViewController.h"
+#import "DataModels.h"
 
 /**
  NSLog (only in Debug)

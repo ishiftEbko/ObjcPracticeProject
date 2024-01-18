@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WebViewController.h"
+#import "NoticeView.h"
 
 //MARK: collectionView Cell
 
