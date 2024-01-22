@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032D7253743D3DFA524A9825 /* Pods_ObjcPracticeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFD0BA634AF0627ACB55CB90 /* Pods_ObjcPracticeProject.framework */; };
 		0B0CDE282B4CE52C00C44A9D /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CDE272B4CE52C00C44A9D /* CommonUtils.m */; };
 		0B0CDE2C2B4D021700C44A9D /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CDE2B2B4D021700C44A9D /* UserDefaults.m */; };
+		0B7B19FA2B5E50B600501068 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B19F92B5E50B600501068 /* CalendarView.m */; };
+		0B7B19FC2B5E50CB00501068 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B19FB2B5E50CB00501068 /* CalendarView.xib */; };
+		0B7B19FF2B5E527300501068 /* DMAuctionScheduleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B19FE2B5E527300501068 /* DMAuctionScheduleInfo.m */; };
+		0B7B1A022B5E52BB00501068 /* DMAuctionScheduleInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B1A012B5E52BB00501068 /* DMAuctionScheduleInfoResult.m */; };
 		0B8A9D602B4B796F00F4E271 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A9D5F2B4B796F00F4E271 /* AppDelegate.m */; };
 		0B8A9D632B4B796F00F4E271 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A9D622B4B796F00F4E271 /* SceneDelegate.m */; };
 		0B8A9D692B4B796F00F4E271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8A9D672B4B796F00F4E271 /* Main.storyboard */; };
@@ -51,6 +56,13 @@
 		0B0CDE272B4CE52C00C44A9D /* CommonUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 		0B0CDE2A2B4D021700C44A9D /* UserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		0B0CDE2B2B4D021700C44A9D /* UserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		0B7B19F82B5E50B600501068 /* CalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
+		0B7B19F92B5E50B600501068 /* CalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		0B7B19FB2B5E50CB00501068 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		0B7B19FD2B5E527300501068 /* DMAuctionScheduleInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMAuctionScheduleInfo.h; path = ObjcPracticeProject/Views/DataModels/DMAuctionScheduleInfo.h; sourceTree = SOURCE_ROOT; };
+		0B7B19FE2B5E527300501068 /* DMAuctionScheduleInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DMAuctionScheduleInfo.m; path = ObjcPracticeProject/Views/DataModels/DMAuctionScheduleInfo.m; sourceTree = SOURCE_ROOT; };
+		0B7B1A002B5E52BB00501068 /* DMAuctionScheduleInfoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAuctionScheduleInfoResult.h; sourceTree = "<group>"; };
+		0B7B1A012B5E52BB00501068 /* DMAuctionScheduleInfoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAuctionScheduleInfoResult.m; sourceTree = "<group>"; };
 		0B8A9D5B2B4B796F00F4E271 /* ObjcPracticeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcPracticeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8A9D5E2B4B796F00F4E271 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0B8A9D5F2B4B796F00F4E271 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +97,9 @@
 		0BC92C772B575D550082AF56 /* SummaryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryView.m; sourceTree = "<group>"; };
 		0BC92C792B57661F0082AF56 /* NoticeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeView.h; sourceTree = "<group>"; };
 		0BC92C7A2B57661F0082AF56 /* NoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeView.m; sourceTree = "<group>"; };
+		AFD0BA634AF0627ACB55CB90 /* Pods_ObjcPracticeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcPracticeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C969DB12DCFA02DE30B204BB /* Pods-ObjcPracticeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcPracticeProject.release.xcconfig"; path = "Target Support Files/Pods-ObjcPracticeProject/Pods-ObjcPracticeProject.release.xcconfig"; sourceTree = "<group>"; };
+		F835CA8571CF9A57041D95EE /* Pods-ObjcPracticeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcPracticeProject.debug.xcconfig"; path = "Target Support Files/Pods-ObjcPracticeProject/Pods-ObjcPracticeProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032D7253743D3DFA524A9825 /* Pods_ObjcPracticeProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +146,8 @@
 				0B8A9D792B4B797100F4E271 /* ObjcPracticeProjectTests */,
 				0B8A9D832B4B797100F4E271 /* ObjcPracticeProjectUITests */,
 				0B8A9D5C2B4B796F00F4E271 /* Products */,
+				E89A5EDDBFEE21C26C3BCB81 /* Pods */,
+				4BC0DF8D56CE0F4C58A34D36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +219,10 @@
 			children = (
 				0B9CDBDE2B57961500406B5D /* DMNoticeListResult.h */,
 				0B9CDBDF2B57961500406B5D /* DMNoticeListResult.m */,
+				0B7B19FD2B5E527300501068 /* DMAuctionScheduleInfo.h */,
+				0B7B19FE2B5E527300501068 /* DMAuctionScheduleInfo.m */,
+				0B7B1A002B5E52BB00501068 /* DMAuctionScheduleInfoResult.h */,
+				0B7B1A012B5E52BB00501068 /* DMAuctionScheduleInfoResult.m */,
 				0B9CDBE12B57992400406B5D /* DataModels.h */,
 			);
 			path = DataModels;
@@ -211,6 +233,9 @@
 			children = (
 				0BC92C762B575D550082AF56 /* SummaryView.h */,
 				0BC92C772B575D550082AF56 /* SummaryView.m */,
+				0B7B19F82B5E50B600501068 /* CalendarView.h */,
+				0B7B19F92B5E50B600501068 /* CalendarView.m */,
+				0B7B19FB2B5E50CB00501068 /* CalendarView.xib */,
 				0BC92C792B57661F0082AF56 /* NoticeView.h */,
 				0BC92C7A2B57661F0082AF56 /* NoticeView.m */,
 				0B9CDBD82B57914700406B5D /* NoticeTVCell.h */,
@@ -220,6 +245,23 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		4BC0DF8D56CE0F4C58A34D36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFD0BA634AF0627ACB55CB90 /* Pods_ObjcPracticeProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E89A5EDDBFEE21C26C3BCB81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F835CA8571CF9A57041D95EE /* Pods-ObjcPracticeProject.debug.xcconfig */,
+				C969DB12DCFA02DE30B204BB /* Pods-ObjcPracticeProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B8A9D8A2B4B797100F4E271 /* Build configuration list for PBXNativeTarget "ObjcPracticeProject" */;
 			buildPhases = (
+				0A0424F6EDBA9C60F54E2046 /* [CP] Check Pods Manifest.lock */,
 				0B8A9D572B4B796F00F4E271 /* Sources */,
 				0B8A9D582B4B796F00F4E271 /* Frameworks */,
 				0B8A9D592B4B796F00F4E271 /* Resources */,
+				8A6D74BC51E2175E44231372 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,6 +369,7 @@
 			files = (
 				0B8A9D6E2B4B797100F4E271 /* LaunchScreen.storyboard in Resources */,
 				0B8A9D6B2B4B797100F4E271 /* Assets.xcassets in Resources */,
+				0B7B19FC2B5E50CB00501068 /* CalendarView.xib in Resources */,
 				0B9CDBDC2B57914700406B5D /* NoticeTVCell.xib in Resources */,
 				0B8A9D692B4B796F00F4E271 /* Main.storyboard in Resources */,
 			);
@@ -346,19 +391,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A0424F6EDBA9C60F54E2046 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ObjcPracticeProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6D74BC51E2175E44231372 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ObjcPracticeProject/Pods-ObjcPracticeProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ObjcPracticeProject/Pods-ObjcPracticeProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ObjcPracticeProject/Pods-ObjcPracticeProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0B8A9D572B4B796F00F4E271 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7B19FF2B5E527300501068 /* DMAuctionScheduleInfo.m in Sources */,
 				0B8A9D9A2B4BCB9E00F4E271 /* MainViewController.m in Sources */,
 				0B9CDBDB2B57914700406B5D /* NoticeTVCell.m in Sources */,
 				0B0CDE2C2B4D021700C44A9D /* UserDefaults.m in Sources */,
+				0B7B1A022B5E52BB00501068 /* DMAuctionScheduleInfoResult.m in Sources */,
 				0B8A9D602B4B796F00F4E271 /* AppDelegate.m in Sources */,
 				0B0CDE282B4CE52C00C44A9D /* CommonUtils.m in Sources */,
 				0B8A9DA02B4BCBCC00F4E271 /* WebViewController.m in Sources */,
 				0BC92C782B575D550082AF56 /* SummaryView.m in Sources */,
 				0B8A9D712B4B797100F4E271 /* main.m in Sources */,
+				0B7B19FA2B5E50B600501068 /* CalendarView.m in Sources */,
 				0B8A9D9D2B4BCBC300F4E271 /* LoginViewController.m in Sources */,
 				0B8A9D632B4B796F00F4E271 /* SceneDelegate.m in Sources */,
 				0B8A9D962B4B7F5400F4E271 /* IntroViewController.m in Sources */,
@@ -456,7 +546,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -471,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -517,7 +607,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -526,7 +616,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -537,6 +627,7 @@
 		};
 		0B8A9D8B2B4B797100F4E271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F835CA8571CF9A57041D95EE /* Pods-ObjcPracticeProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,6 +657,7 @@
 		};
 		0B8A9D8C2B4B797100F4E271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C969DB12DCFA02DE30B204BB /* Pods-ObjcPracticeProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

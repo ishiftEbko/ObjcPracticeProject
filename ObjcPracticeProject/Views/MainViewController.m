@@ -34,6 +34,9 @@
     [self.moveBtn addGestureRecognizer:tap];
     
     // Notification Center addObserver
+    NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
+    [notiCenter addObserver:self selector:@selector(goWebView:) name:NOTI_GO_WEB_VIEW object:nil];
+    
     // refresh control 세팅
     [self initRefreshControl];
     
@@ -80,19 +83,22 @@
 }
 
 -(void)initImageViewArray {
-    UIImage *image1 = [UIImage systemImageNamed:@"1.circle.fill"];
-    UIImage *image2 = [UIImage systemImageNamed:@"2.circle.fill"];
-    UIImage *image3 = [UIImage systemImageNamed:@"3.circle.fill"];
-    UIImage *image4 = [UIImage systemImageNamed:@"4.circle.fill"];
-    UIImage *image5 = [UIImage systemImageNamed:@"5.circle.fill"];
-    UIImageView *imageView1 = [[UIImageView alloc] initWithImage:image1];
-    UIImageView *imageView2 = [[UIImageView alloc] initWithImage:image2];
-    UIImageView *imageView3 = [[UIImageView alloc] initWithImage:image3];
-    UIImageView *imageView4 = [[UIImageView alloc] initWithImage:image4];
-    UIImageView *imageView5 = [[UIImageView alloc] initWithImage:image5];
+//    UIImage *image1 = [UIImage systemImageNamed:@"1.circle.fill"];
+//    UIImage *image2 = [UIImage systemImageNamed:@"2.circle.fill"];
+//    UIImage *image3 = [UIImage systemImageNamed:@"3.circle.fill"];
+//    UIImage *image4 = [UIImage systemImageNamed:@"4.circle.fill"];
+//    UIImage *image5 = [UIImage systemImageNamed:@"5.circle.fill"];
+//    UIImageView *imageView1 = [[UIImageView alloc] initWithImage:image1];
+//    UIImageView *imageView2 = [[UIImageView alloc] initWithImage:image2];
+//    UIImageView *imageView3 = [[UIImageView alloc] initWithImage:image3];
+//    UIImageView *imageView4 = [[UIImageView alloc] initWithImage:image4];
+//    UIImageView *imageView5 = [[UIImageView alloc] initWithImage:image5];
     NoticeView *noticeView = [[NoticeView alloc] init];
+    CalendarView *calendarView = [[CalendarView alloc] init];
+    calendarView.delegate = self;
+    noticeView.delegate = self;
         
-    self.tempImageViewArray = [NSMutableArray arrayWithObjects:imageView1, imageView2, imageView3, imageView4, imageView5, noticeView, nil];
+    self.tempImageViewArray = [NSMutableArray arrayWithObjects:/*imageView1, imageView2, imageView3, imageView4, imageView5, */noticeView, calendarView, nil];
     for (UIImageView *imageView in self.tempImageViewArray) {
         imageView.translatesAutoresizingMaskIntoConstraints = false;
         imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -111,6 +117,25 @@
             [self.navigationController pushViewController:webVC animated:YES];            
         }
     }
+}
+
+// MARK: NoticeViewDelegate
+-(void) moveToNoticeWebView:(WebViewController *)webVC {
+    if (webVC != nil) {
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+}
+
+-(void) goWebView:(NSNotification *)noti {
+    if (noti != nil) {
+        WebViewController *webVC = noti.object;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+}
+
+// MARK: CalendarViewDelegate
+-(void)changeCalendarViewHeight:(CGFloat)height scope:(FSCalendarScope)scope {
+    
 }
 
 // MARK: Request Data and Refresh Data

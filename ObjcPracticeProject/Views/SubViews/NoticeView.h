@@ -10,7 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol NoticeViewDelegate
+@required
+-(void)moveToNoticeWebView:(WebViewController *)webVC;
+@end
+
 @interface NoticeView : UIView<UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) id<NoticeViewDelegate> delegate;
 
 @end
 

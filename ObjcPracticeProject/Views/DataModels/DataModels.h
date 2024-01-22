@@ -9,6 +9,8 @@
 #define DataModels_h
 
 #import "DMNoticeListResult.h"
+#import "DMAuctionScheduleInfo.h"
+#import "DMAuctionScheduleInfoResult.h"
 
 
 #endif /* DataModels_h */

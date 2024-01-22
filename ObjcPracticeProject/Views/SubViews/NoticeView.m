@@ -16,32 +16,52 @@
 @end
 
 @implementation NoticeView
-- (instancetype)init
+//- (instancetype)init
+//{
+//    self = [super init];
+//    if (self) {
+//        NSLog(@"init");
+//        [self initTableView];
+//    }
+//    return self;
+//}
+
+/*
+ UIView의 생성자
+ initWithFrame, initWithCoder
+ 
+ UIViewController의 생성자
+ initWithNibName, initWithCoder
+ 
+ initWithCoder: nib에서 로드할 때 호출되는 생성자 (xib, storyboard 이용)
+                 호출 시점에 outlet, action 연결 X
+ 
+ initWithFrame: UIView의 지정생성자 (by code, programatically)
+ initWithNibName: UIViewController의 지정생성자 (by code, programatically)
+ 
+ awakeFromNib: nib에서 모든 것이 로드되고 outlet, action이 모두 연결되면 호출되는 것이 보장됨
+ */
+
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
+        NSLog(@"initWithFrame");
         [self initTableView];
     }
     return self;
 }
 
-//- (instancetype)initWithFrame:(CGRect)frame
+//- (instancetype)initWithCoder:(NSCoder *)coder
 //{
-//    self = [super initWithFrame:frame];
+//    self = [super initWithCoder:coder];
 //    if (self) {
+//        // xib나 storyboard에 없으면 호출도 안 되나?
+//        NSLog(@"initWithCoder");
 //        [self initTableView];
 //    }
 //    return self;
 //}
-//
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        [self initTableView];
-    }
-    return self;
-}
 
 -(void)registerNib {
     NSString *cellId = NSStringFromClass([NoticeTVCell class]);
@@ -53,7 +73,7 @@
     self.headerView.translatesAutoresizingMaskIntoConstraints = false;
     
     self.headerTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.headerView.bounds.origin.x, self.headerView.bounds.origin.y, (self.headerView.bounds.size.width)*0.6, self.headerView.bounds.size.height)];
-    self.headerMoreBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.headerView.bounds.origin.x, self.headerView.bounds.origin.y, (self.headerView.bounds.size.width)*0.2, (self.headerView.bounds.size.height)*0.5)];
+    self.headerMoreBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.headerView.bounds.origin.x, self.headerView.bounds.origin.y, (self.headerView.bounds.size.width)*0.3, (self.headerView.bounds.size.height)*0.5)];
     
     self.headerTitleLabel.translatesAutoresizingMaskIntoConstraints = false;
     self.headerMoreBtn.translatesAutoresizingMaskIntoConstraints = false;
@@ -63,10 +83,12 @@
     [self.headerTitleLabel setFont:[UIFont boldSystemFontOfSize:25]];
     self.headerTitleLabel.textAlignment = NSTextAlignmentLeft;
     
-    [self.headerMoreBtn setBackgroundColor:[UIColor systemRedColor]];
-    [self.headerMoreBtn.titleLabel setText:@"더보기"];
-    [self.headerMoreBtn.titleLabel setTextColor:[UIColor systemGrayColor]];
-    self.headerMoreBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+    // title의 appearance 변경 -> setAttributedTitle
+    [self.headerMoreBtn setTitle:@"더보기" forState:UIControlStateNormal];
+    [self.headerMoreBtn setTitleColor:[UIColor systemGrayColor] forState:UIControlStateNormal];
+//    [self.headerMoreBtn setBackgroundColor:[UIColor systemGrayColor]];
+//    [self.headerMoreBtn.layer setMasksToBounds:true];
+//    [self.headerMoreBtn.layer setCornerRadius:10.0];
     [self.headerMoreBtn addTarget:self action:@selector(moreBtnTouched:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.headerView addSubview:self.headerTitleLabel];
@@ -99,13 +121,15 @@
         
         [self.headerView.widthAnchor constraintEqualToAnchor:self.widthAnchor],
         [self.headerView.heightAnchor constraintEqualToConstant:150],
+        [self.headerView.leadingAnchor constraintEqualToAnchor:self.tableView.leadingAnchor],
+        [self.headerView.topAnchor constraintEqualToAnchor:self.tableView.topAnchor],
         
         [self.headerTitleLabel.bottomAnchor constraintEqualToAnchor:self.headerView.bottomAnchor],
         [self.headerTitleLabel.leadingAnchor constraintEqualToAnchor:self.headerView.leadingAnchor constant:35],
         
         [self.headerMoreBtn.bottomAnchor constraintEqualToAnchor:self.headerView.bottomAnchor],
         [self.headerMoreBtn.leadingAnchor constraintEqualToAnchor:self.headerTitleLabel.trailingAnchor constant:20],
-        [self.headerMoreBtn.widthAnchor constraintEqualToConstant:150],
+//        [self.headerMoreBtn.widthAnchor constraintEqualToConstant:(self.headerView.bounds.size.width)*0.6],
     ]];
     
 //    [self.headerView layoutIfNeeded];
@@ -114,6 +138,16 @@
 // MARK: Action
 -(void)moreBtnTouched:(UIButton *)sender {
     NSLog(@"더보기 버튼 클릭");
+    WebViewController *webVC = [CommonUtils getWebView:@"https://www.google.com" params:nil headerTitle:nil];
+    // delegate
+//    if (webVC != nil && self.delegate != nil) {
+//        [self.delegate moveToNoticeWebView:webVC];
+//    }
+    
+    // notification Center
+    if (webVC != nil) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_GO_WEB_VIEW object:webVC];        
+    }
 }
 
 // MARK: tableView Delegate

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CalendarView" id="iN0-l3-epB" customClass="CalendarView">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsu-Tc-TXd">
+                    <rect key="frame" x="15" y="59" width="363" height="250"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bv-sf-nUG" customClass="FSCalendar">
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="230"/>
+                            <viewLayoutGuide key="safeArea" id="Bv6-gg-Ati"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="230" id="ScK-5A-i3A"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                    <color key="value" systemColor="systemTealColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                                    <color key="value" systemColor="systemTealColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                    <color key="value" systemColor="systemTealColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="subtitleDefaultColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
+                                    <color key="value" systemColor="systemPurpleColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                    <real key="value" value="11"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="get-fa-lll">
+                            <rect key="frame" x="170.66666666666666" y="230" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="get-fa-lll" secondAttribute="height" multiplier="1:1" id="K9v-CZ-tYd"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <imageReference key="image" image="arrow.down" catalog="system" renderingMode="original"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W50-ol-LwC">
+                            <rect key="frame" x="15" y="5" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="W50-ol-LwC" secondAttribute="height" multiplier="1:1" id="Vdv-nn-5uE"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="arrow.left" catalog="system"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEV-So-Cp3">
+                            <rect key="frame" x="326" y="10" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="zEV-So-Cp3" secondAttribute="height" multiplier="1:1" id="yup-OI-9UT"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="arrow.right" catalog="system"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="hsT-ph-iYz"/>
+                    <color key="backgroundColor" red="0.1848562279148647" green="0.11748334054538052" blue="0.45926186473099229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="W50-ol-LwC" firstAttribute="leading" secondItem="hsT-ph-iYz" secondAttribute="leading" constant="15" id="5UN-Ic-ziB"/>
+                        <constraint firstItem="hsT-ph-iYz" firstAttribute="trailing" secondItem="zEV-So-Cp3" secondAttribute="trailing" constant="15" id="API-3f-s2e"/>
+                        <constraint firstItem="6bv-sf-nUG" firstAttribute="leading" secondItem="hsT-ph-iYz" secondAttribute="leading" id="DnP-05-aFL"/>
+                        <constraint firstAttribute="height" constant="250" id="KRM-N4-8u8"/>
+                        <constraint firstItem="6bv-sf-nUG" firstAttribute="top" secondItem="hsT-ph-iYz" secondAttribute="top" id="Q0n-Nv-Zmq"/>
+                        <constraint firstItem="hsT-ph-iYz" firstAttribute="trailing" secondItem="6bv-sf-nUG" secondAttribute="trailing" id="TL2-YZ-pxx"/>
+                        <constraint firstItem="get-fa-lll" firstAttribute="top" secondItem="6bv-sf-nUG" secondAttribute="bottom" id="YpO-aO-um3"/>
+                        <constraint firstItem="W50-ol-LwC" firstAttribute="top" secondItem="hsT-ph-iYz" secondAttribute="top" constant="5" id="pVw-a4-fzT"/>
+                        <constraint firstItem="get-fa-lll" firstAttribute="centerX" secondItem="hsT-ph-iYz" secondAttribute="centerX" id="u2K-eu-KVr"/>
+                        <constraint firstItem="zEV-So-Cp3" firstAttribute="top" secondItem="hsT-ph-iYz" secondAttribute="top" constant="10" id="yRL-jo-Q6L"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="wsu-Tc-TXd" secondAttribute="top" id="Nw4-hq-s6i"/>
+                <constraint firstItem="wsu-Tc-TXd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="kYl-iQ-SFl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wsu-Tc-TXd" secondAttribute="trailing" constant="15" id="p48-mY-bdx"/>
+            </constraints>
+            <connections>
+                <outlet property="calendar" destination="6bv-sf-nUG" id="mde-9S-0ae"/>
+                <outlet property="calendarHeight" destination="ScK-5A-i3A" id="gib-Si-9Bc"/>
+                <outlet property="calendarShowBtn" destination="get-fa-lll" id="AR7-SC-NfA"/>
+                <outlet property="calendarView" destination="wsu-Tc-TXd" id="fBA-mk-ctU"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.down" catalog="system" width="118" height="128"/>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

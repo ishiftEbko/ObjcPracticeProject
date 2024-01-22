@@ -44,7 +44,7 @@
  Value Define
  */
 // Notification Define
-
+#define NOTI_GO_WEB_VIEW @"goWebView"
 
 /**
  Common Text Define (for Localize)
