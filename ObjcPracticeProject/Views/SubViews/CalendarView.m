@@ -28,11 +28,34 @@
 {
     self = [super init];
     if (self) {
-        [self initCalendar];
-        [self setLocale];
-        
+        return [self initWithNibName:NSStringFromClass([CalendarView class])];
     }
     return self;
+}
+
+// view 불러낼 때 단순히 init 으로만 하면 밑에 있는 subView가 나타나지 않음
+// 왜냠... 당신... xib로 작성햇기 때문입니다
+-(instancetype)initWithNibName:(NSString *)nibName {
+    NSString *newNibName = nibName ? nibName : NSStringFromClass([CalendarView class]);
+    UINib *nib = [UINib nibWithNibName:newNibName bundle:nil];
+    NSArray *viewArray = [nib instantiateWithOwner:nil options:nil];
+    
+    for (id subView in viewArray) {
+        if ([[self class] isSubclassOfClass:[subView class]]) {
+            self = subView;
+            break;
+        }
+    }
+    if (self) {
+        return self;
+    }
+    return nil;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self initCalendar];
+    [self setLocale];
 }
 
 -(void)initCalendar {
@@ -42,6 +65,7 @@
     
     self.calendar.delegate = self;
     self.calendar.dataSource = self;
+    
     self.calendar.placeholderType = FSCalendarPlaceholderTypeFillHeadTail;
     self.calendar.firstWeekday = 1;
     self.calendar.scrollEnabled = false;
@@ -93,9 +117,51 @@
 }
 
 // MARK: Button Action
+- (IBAction)changeCalendarType:(id)sender {
+    if (self.calendar.scope == FSCalendarScopeMonth) {
+        [self.calendar setScope:FSCalendarScopeWeek animated:YES];
+        [self.calendarShowBtn setImage:[UIImage systemImageNamed:@"arrow.up"] forState:UIControlStateNormal];
+    } else {
+        [self.calendar setScope:FSCalendarScopeMonth animated:YES];
+        [self.calendarShowBtn setImage:[UIImage systemImageNamed:@"arrow.down"] forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)goPreviousMonth:(id)sender {
+    NSLog(@"previous month");
+    [self changeMonth:-1];
+    [self.calendar reloadData];
+}
+
+- (IBAction)goNextMonth:(id)sender {
+    NSLog(@"next month");
+    [self changeMonth:1];
+    [self.calendar reloadData];
+}
+
+- (void)changeMonth:(NSInteger)value {
+    NSDate *currentMonth = self.calendar.currentPage;
+    NSDate *changedMonth = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:value toDate:currentMonth options:0];
+    [self.calendar setCurrentPage:changedMonth animated:YES];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMM"];
+    NSString *yearMonth = [formatter stringFromDate:changedMonth];
+    // API 호출해서 summary도 변경
+}
 
 // MARK: FSCalendar Delegate
-
+- (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated {
+    if (self.delegate) {
+        [self.delegate changeCalendarViewHeight:CGRectGetHeight(bounds) scope:self.calendar.scope];
+    }
+    
+    self.calendarHeight.constant = CGRectGetHeight(bounds);
+    [self layoutIfNeeded];
+    if (self.calendar.selectedDate && [self.calendar.selectedDate isEqualToDate:self.calendar.today]) {
+        [self.calendar deselectDate:self.calendar.selectedDate];
+    }
+}
 
 @end
 

@@ -97,13 +97,13 @@
     CalendarView *calendarView = [[CalendarView alloc] init];
     calendarView.delegate = self;
     noticeView.delegate = self;
-        
+    
     self.tempImageViewArray = [NSMutableArray arrayWithObjects:/*imageView1, imageView2, imageView3, imageView4, imageView5, */noticeView, calendarView, nil];
-    for (UIImageView *imageView in self.tempImageViewArray) {
-        imageView.translatesAutoresizingMaskIntoConstraints = false;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [imageView.widthAnchor constraintEqualToConstant:self.mainContentsView.frame.size.width].active = true;
-        [imageView.heightAnchor constraintEqualToConstant:500].active = true;
+    for (UIView *view in self.tempImageViewArray) {
+        view.translatesAutoresizingMaskIntoConstraints = false;
+        view.contentMode = UIViewContentModeScaleAspectFit;
+        [view.widthAnchor constraintEqualToConstant:self.mainContentsView.frame.size.width].active = true;
+        [view.heightAnchor constraintEqualToConstant:500].active = true;
     }
 }
 
